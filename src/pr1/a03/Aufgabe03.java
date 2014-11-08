@@ -1,5 +1,4 @@
 //																	Zier, 824320
-// Fragen an Schimkat: Random bei mixedIntNumberFile? Numbercount erhöhen (geradzahlig)?
 
 package pr1.a03;
 

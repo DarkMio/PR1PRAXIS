@@ -1,5 +1,5 @@
 //																	Zier, 824320
-//  Fragen an Schimkat: Ohne import? Mit Import?
+
 package pr1.a03;
 
 import schimkat.berlin.lernhilfe2014ws.io.DirtyFileWriter;

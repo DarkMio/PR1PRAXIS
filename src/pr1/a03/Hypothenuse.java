@@ -1,5 +1,4 @@
 //																	Zier, 824320
-// Fragen an Schimkat: Linebreak in params, linebreak mit Comment
 
 package pr1.a03;
 
