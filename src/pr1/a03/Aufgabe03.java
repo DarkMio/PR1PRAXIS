@@ -13,7 +13,7 @@ public class Aufgabe03 {
 	}
 	
 	public static void writeIntNumberFile(String filename, int numberCount){
-		buildRandom(filename, numberCount, 3);
+		buildRandom(filename, numberCount, 4);
 	}
 	
 	public static void writeMixedNumberFile(String filename, int numberCount, int width){
@@ -26,8 +26,8 @@ public class Aufgabe03 {
 		if(numberCount % 2 == 1) { numberCount ++; }
 
 		for(int i = 1; i <= numberCount; i++){
-			double randInt = 10.5 * Math.random();
-			out.printf("%" + width + "." + (width-3) + "f ", randInt);
+			double randInt = 100.5 * Math.random();
+			out.printf("%" + width + "." + (width-4) + "f ", randInt);
 			if(i % 10 == 0) { out.println(); }
 		}
 		dfw.close();

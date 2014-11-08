@@ -34,12 +34,12 @@ public class Hypothenuse {
 	}
 	
 	public static void testHypothenuse(int width, int precision, PrintWriter out){
-		// k1 = Kathaethe 1 - Rows
+		// k1 = Katethe 1 - Rows
 		for(int k1 = 0; k1 <= 10; k1++){
-			// k2 = Katheathe 2 - Columns
+			// k2 = Katethe 2 - Columns
 			for(int k2 = 0; k2 <= 10; k2++){
 				if(k1 == 0 && k2 == 0){
-					for(int i = 0; i < width; i++){
+					for(int i = 1; i <= width; i++){
 						out.print(" ");
 					}
 				} else {

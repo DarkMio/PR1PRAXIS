@@ -3,6 +3,7 @@
 package pr1.a03;
 
 import schimkat.berlin.lernhilfe2014ws.io.DirtyFileWriter;
+import pr1.a02.Schachbrett;
 import java.io.PrintWriter;
 
 public class TestSchachbrett {
@@ -17,9 +18,9 @@ public class TestSchachbrett {
 		PrintWriter out = new PrintWriter(dfw, false);
 		
 		if(isReverse){
-			pr1.a02.Schachbrett.printSchachbrettReverse(out);
+			Schachbrett.printSchachbrettReverse(out);
 		} else {
-			pr1.a02.Schachbrett.printSchachbrett(out);
+			Schachbrett.printSchachbrett(out);
 		}
 		
 		dfw.close();
