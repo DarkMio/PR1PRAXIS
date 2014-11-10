@@ -46,7 +46,7 @@ public class Hypothenuse {
 					printHypothenuse(k1, k2, width, precision, out);
 				}
 				// a nice breaker as table
-				if(k2 == 0){out.print(" | ");}
+				if(k2 == 0){out.print(" |");}
 			}
 			out.println();
 			

@@ -5,6 +5,7 @@ package pr1.a03;
 import schimkat.berlin.lernhilfe2014ws.io.DirtyFileWriter;
 import pr1.a02.Schachbrett;
 import java.io.PrintWriter;
+import pr1.a02.Schachbrett;
 
 public class TestSchachbrett {
 
