@@ -1,4 +1,5 @@
 //																	Zier, 824320
+// Fragen: Unbedingt alle Dateien darstellen?
 package pr1.a04;
 
 import schimkat.berlin.lernhilfe2014ws.io.DirtyFileReader;
@@ -10,72 +11,30 @@ import java.util.Scanner;
 
 public class FirstInput {
 
-    public static String doubleNumbers =
-                        "3.2 44.0 12.3 24.3 0.243 68.234 12.4 55.555 38.12";
-    public static String intNumbers = "9 12 42 3 5 24 13 77 98";
-    public static String mixedNumbers =
-                        "9.0 12 42.342 3 5 24.12 13.66 77 98";
-
     public static void main(String[] args) {
+        String filename = "./testfiles/zahlen01.txt";
+
         DirtyFileReader dfr = new DirtyFileReader("03c_randMix.txt");
-        Scanner in = new Scanner(doubleNumbers);
         Scanner fin = new Scanner(dfr);
+        DirtyFileReader csoDfr = new DirtyFileReader(filename);
+        Scanner in = new Scanner(csoDfr);
         PrintWriter out = new PrintWriter(System.out, true);
+
         // Proper number handling:
         Locale.setDefault(Locale.US);
 
-        scannerAusprobieren();
         out.println(countSumOf(in));
-        out.println(countSumOf(doubleNumbers));
+        out.println(countSumOf(filename));
 
         printNumbersFrom(fin, 8, 4, out);
         fin.close();
 
-        copyNumberFile(15, 7, "03c_randMix.txt", "04b2_copyNumber.txt");
-    }
-
-    public static void scannerAusprobieren() {
-        PrintWriter out = new PrintWriter(System.out, true);
-        DirtyFileReader dfr = new DirtyFileReader("./testfiles/zahlen01.txt");
-        Scanner in = new Scanner(dfr);
-
-        out.println("-- scannerRead(intNumbers) --");
-        provideScanner(intNumbers, out);
-        out.println("\n-- scannerRead(doubleNumbers) --");
-        provideScanner(doubleNumbers, out);
-        out.println("\n-- scannerRead(mixedNumbers) --");
-        provideScanner(mixedNumbers, out);
-        out.println("\n-- scannerRead(dfr) --");
-        scannerRead(in, out);
-    }
-
-    public static void provideScanner(String string, PrintWriter out) {
-        Scanner in = new Scanner(string);
-        scannerRead(in, out);
-    }
-
-    public static void scannerRead(Scanner in, PrintWriter out) {
-        while (in.hasNext()) {
-            if (in.hasNextInt()) {
-                int i = in.nextInt();
-                out.println("Integer:  " + i);
-                continue;
-            }
-            if (in.hasNextDouble()) {
-                double d = in.nextDouble();
-                out.println("Float:    " + d);
-                continue;
-            }
-            String token = in.next();
-            out.println("[ " + token + "]");
-        }
+        copyNumberFile("03c_randMix.txt", "04b2_copyNumber.txt");
     }
 
     public static int countSumOf(Scanner in) {
         double d = 0;
-        while(in.hasNext()) {
-            d += in.nextDouble();
-        }
+        while(in.hasNext()) { d += in.nextDouble(); }
         if(d % 1 != 0) {
             System.out.println("WARNING: Converted double to int with fractional digits.");
         }
@@ -83,7 +42,8 @@ public class FirstInput {
     }
 
     public static int countSumOf(String string) {
-        Scanner in = new Scanner(string);
+        DirtyFileReader dfr = new DirtyFileReader(string);
+        Scanner in = new Scanner(dfr);
         return countSumOf(in);
     }
 
@@ -95,12 +55,11 @@ public class FirstInput {
                 out.printf("%" + width + "." + precision + "f ", in.nextDouble());
             }
 
-            if(cnt % 10 == 0) {
-                out.println();
-            }
+            if(cnt % 10 == 0) { out.println(); }
         }
     }
-    public static void copyNumberFile(int width, int precision, String filenameIn, String filenameOut) {
+
+    public static void copyNumberFile(String filenameIn, String filenameOut) {
         DirtyFileReader dfr = new DirtyFileReader(filenameIn);
         Scanner in = new Scanner(dfr);
         DirtyFileWriter dfw = new DirtyFileWriter(filenameOut);
