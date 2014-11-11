@@ -1,3 +1,4 @@
+//																	Zier, 824320
 package pr1.a04;
 
 import schimkat.berlin.lernhilfe2014ws.io.DirtyFileReader;
@@ -9,17 +10,24 @@ import java.util.Scanner;
 
 public class FirstInput {
 
+    public static String doubleNumbers =
+                        "3.2 44.0 12.3 24.3 0.243 68.234 12.4 55.555 38.12";
+    public static String intNumbers = "9 12 42 3 5 24 13 77 98";
+    public static String mixedNumbers =
+                        "9.0 12 42.342 3 5 24.12 13.66 77 98";
+
     public static void main(String[] args) {
-        Locale.setDefault(Locale.US); // Proper number handling
-        //scannerAusprobieren();
-        String doubleNumbers = "3.2 44.0 12.3 24.3 0.243 68.234 12.4 55.555 38.12";
-        String intNumbers = "9 12 42 3 5 24 13 77 98";
         DirtyFileReader dfr = new DirtyFileReader("03c_randMix.txt");
         Scanner in = new Scanner(doubleNumbers);
         Scanner fin = new Scanner(dfr);
         PrintWriter out = new PrintWriter(System.out, true);
-        System.out.println(countSumOf(in));
-        System.out.println(countSumOf(doubleNumbers));
+        // Proper number handling:
+        Locale.setDefault(Locale.US);
+
+        scannerAusprobieren();
+        out.println(countSumOf(in));
+        out.println(countSumOf(doubleNumbers));
+
         printNumbersFrom(fin, 8, 4, out);
         fin.close();
 
@@ -31,9 +39,6 @@ public class FirstInput {
         DirtyFileReader dfr = new DirtyFileReader("./testfiles/zahlen01.txt");
         Scanner in = new Scanner(dfr);
 
-        String intNumbers = "9 12 42 3 5 24 13 77 98";
-        String doubleNumbers = "3.2 44.0 12.3 24.3 0.243 68.234 12.4 55.555 38.12";
-        String mixedNumbers = "9.0 12 42.342 3 5 24.12 13.66 77 98";
         out.println("-- scannerRead(intNumbers) --");
         provideScanner(intNumbers, out);
         out.println("\n-- scannerRead(doubleNumbers) --");
@@ -72,7 +77,7 @@ public class FirstInput {
             d += in.nextDouble();
         }
         if(d % 1 != 0) {
-            System.out.println("WARNING: Converted double with fractional digits.");
+            System.out.println("WARNING: Converted double to int with fractional digits.");
         }
         return (int) d;
     }
