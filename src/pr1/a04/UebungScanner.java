@@ -9,10 +9,10 @@ import java.util.Scanner;
 
 public class UebungScanner {
 
-    public static String doubleNumbers =
+    public static final String doubleNumbers =
             "3.2 44.0 12.3 24.3 0.243 68.234 12.4 55.555 38.12";
-    public static String intNumbers = "9 12 42 3 5 24 13 77 98";
-    public static String mixedNumbers =
+    public static final String intNumbers = "9 12 42 3 5 24 13 77 98";
+    public static final String mixedNumbers =
             "9.0 12 42.342 3 5 24.12 13.66 77 98";
 
 
@@ -22,7 +22,6 @@ public class UebungScanner {
 
         scannerAusprobieren();
     }
-
 
     public static void scannerAusprobieren() {
         PrintWriter out = new PrintWriter(System.out, true);
@@ -41,12 +40,10 @@ public class UebungScanner {
         scannerRead(in, out);
     }
 
-
     public static void execScanner(String string, PrintWriter out) {
         Scanner in = new Scanner(string);
         scannerRead(in, out);
     }
-
 
     public static void scannerRead(Scanner in, PrintWriter out) {
         while (in.hasNext()) {
