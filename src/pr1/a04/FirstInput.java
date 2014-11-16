@@ -46,6 +46,7 @@ public class FirstInput {
         while(in.hasNext()) {
             d += in.nextDouble();
         }
+        in.close();
         return (int) d;
     }
 
@@ -66,6 +67,7 @@ public class FirstInput {
                 out.println();
             }
         }
+        in.close();
     }
 
     public static void copyNumberFile(String filenameIn, String filenameOut) {
@@ -74,6 +76,5 @@ public class FirstInput {
         PrintWriter fout = new PrintWriter(dfw, false);
 
         printNumbersFrom(in, 15, 7, fout);
-        in.close();
     }
 }
