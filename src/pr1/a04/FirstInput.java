@@ -1,5 +1,4 @@
 //																	Zier, 824320
-// Fragen: Unbedingt alle Dateien darstellen?
 package pr1.a04;
 
 import schimkat.berlin.lernhilfe2014ws.io.DirtyFileReader;
@@ -12,25 +11,19 @@ import java.util.Scanner;
 public class FirstInput {
 
     public static void main(String[] args) {
-        String filename = "./testfiles/zahlen01.txt";
-
-        DirtyFileReader randMixDfr = new DirtyFileReader("03c_randMix.txt");
-        Scanner randMixFin = new Scanner(randMixDfr);
-
-        DirtyFileReader  randIntDfr = new DirtyFileReader("03c_randInt.txt");
-        Scanner randIntFin = new Scanner(randIntDfr);
-
-        DirtyFileReader csoDfr = new DirtyFileReader(filename);
-        Scanner in = new Scanner(csoDfr);
-
-        PrintWriter out = new PrintWriter(System.out, true);
-
         // Proper number handling:
         Locale.setDefault(Locale.US);
 
+        String csoFilename = "./testfiles/zahlen01.txt";
+        Scanner randMixFin = provideScanner("03c_randInt.txt");
+        Scanner randIntFin = provideScanner("03c_randInt.txt");
+        Scanner csoIn = provideScanner(csoFilename);
+
+        PrintWriter out = new PrintWriter(System.out, true);
+
         out.println("countSumOf ./testfiles/zahlen01.txt");
-        out.println(countSumOf(in));
-        out.println(countSumOf(filename));
+        out.println(countSumOf(csoIn));
+        out.println(countSumOf(csoFilename));
 
         out.println("\nReading and printing 03c_randMix.txt:");
         printNumbersFrom(randMixFin, 8, 4, out);
@@ -43,6 +36,11 @@ public class FirstInput {
         copyNumberFile("03c_randMix.txt", "04b2_copyNumber.txt");
     }
 
+    public static Scanner provideScanner(String filename) {
+        DirtyFileReader dfr = new DirtyFileReader(filename);
+        return new Scanner(dfr);
+    }
+
     public static int countSumOf(Scanner in) {
         double d = 0;
         while(in.hasNext()) {
@@ -52,12 +50,11 @@ public class FirstInput {
     }
 
     public static int countSumOf(String filename) {
-        DirtyFileReader dfr = new DirtyFileReader(filename);
-        Scanner in = new Scanner(dfr);
-        return countSumOf(in);
+        return countSumOf(provideScanner(filename));
     }
 
     public static void printNumbersFrom(Scanner in, int width, int precision, PrintWriter out) {
+        // assuming input is accurate and always int or double
         for(int cnt = 1; in.hasNext(); cnt ++) {
             if(in.hasNextInt()){
                 out.printf("%" + width + "d ", in.nextInt());
@@ -72,8 +69,7 @@ public class FirstInput {
     }
 
     public static void copyNumberFile(String filenameIn, String filenameOut) {
-        DirtyFileReader dfr = new DirtyFileReader(filenameIn);
-        Scanner in = new Scanner(dfr);
+        Scanner in = provideScanner(filenameIn);
         DirtyFileWriter dfw = new DirtyFileWriter(filenameOut);
         PrintWriter fout = new PrintWriter(dfw, false);
 
