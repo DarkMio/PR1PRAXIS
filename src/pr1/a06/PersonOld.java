@@ -1,22 +1,22 @@
 //																	Zier, 824320
 package pr1.a06;
 
-public class Person {
+public class PersonOld {
     protected String vorname;
     protected String nachname;
     protected int geburtsjahr;
 
-    public Person(String vorname, String nachname, int geburtsjahr) {
+    public PersonOld(String vorname, String nachname, int geburtsjahr) {
         this.vorname = vorname;
         this.nachname = nachname;
         this.geburtsjahr = geburtsjahr;
     }
 
-    public Person(Person person) {
+    public PersonOld(PersonOld person) {
         this(person.vorname, person.nachname, person.geburtsjahr);
     }
 
-    public Person(schimkat.berlin.lernhilfe2014ws.objectPlay.Person person) {
+    public PersonOld(schimkat.berlin.lernhilfe2014ws.objectPlay.Person person) {
         this(person.getVorname(), person.getNachname(), person.getGeburtsjahr());
     }
 
@@ -39,9 +39,9 @@ public class Person {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Person)) return false;
+        if (!(o instanceof PersonOld)) return false;
 
-        Person person = (Person) o;
+        PersonOld person = (PersonOld) o;
 
         if (geburtsjahr != person.geburtsjahr) return false;
         if (nachname != null ? !nachname.equals(person.nachname) : person.nachname != null) return false;

@@ -1,3 +1,4 @@
+//																	Zier, 824320
 package pr1.a06;
 
 import java.io.PrintWriter;
