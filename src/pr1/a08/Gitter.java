@@ -1,3 +1,4 @@
+//																	Zier, 824320
 package pr1.a08;
 
 import java.awt.Color;
