@@ -9,9 +9,11 @@ public class Test {
         DirtyPainter painter = new DirtyPainter();
 //        Baum baum = new Baum(25, 250, 250, 100, 1000);
 //        Strauch strauch = new Strauch(100, 100, 100, 100, 1000);
-//        Flower flower = new Flower(30, 100, 100, 10, 100, 6);
-        Tree tree = new Tree(7, 600, 600, 100, 15, 6);
-        painter.add(tree);
+        Flower flower = new Flower(30, 100, 100, 10, 100, 6);
+        Flower flower2 = new Flower(10, 400, 400, 10, 100, 8);
+//        Tree tree = new Tree(7, 600, 600, 100, 15, 6);
+        painter.add(flower);
+        painter.add(flower2);
 //        painter.add(baum);
 //        painter.add(strauch);
 //        painter.add(flower);
@@ -20,7 +22,8 @@ public class Test {
         painter.showDrawing();
         for(int i = 0; i <= 102; i++) {
             if(i == 101){i = 0;}
-            tree.ChangeActivityTo(i);
+            flower.ChangeActivityTo(i);
+            flower2.ChangeActivityTo(i);
             //tree.grow();
             painter.showDrawing();
             try {

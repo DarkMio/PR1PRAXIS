@@ -31,15 +31,15 @@ public class Flower extends PflanzeInit {
         int circleRelCenterX = localsize / 2 + posX;
         int circleRelCenterY = localsize / 2 + posY;
 
-        int ovalHeight = localsize / 3;
-        int ovalWidth = localsize;
+        int ovalHeight = (localsize* activity / 100) / 3;
+        int ovalWidth = localsize* activity / 100;
 
         int ovalPosX = circleRelCenterX + (innerDiameter/2) - (ovalWidth / 2);
         int ovalPosY = circleRelCenterY - (ovalHeight / 2);
 
-        Graphics2D g2d = new Graphics(g);
+        Graphics2D g2d = (Graphics2D) g;
 
-        g2d.rotate(activity/2, circleRelCenterX, circleRelCenterY);
+
 
         for(int i = 0; i < petals; i++) {
             g2d.setColor(new Color(255, 182, 193));
@@ -49,6 +49,7 @@ public class Flower extends PflanzeInit {
             g2d.fillOval(ovalPosX, ovalPosY, ovalWidth, ovalHeight);
             g2d.rotate(rotationPerGroupRadians, circleRelCenterX, circleRelCenterY);
         }
+
         g2d.setColor(new Color(176, 23, 31));
         g2d.fillOval(posX, posY, localsize, localsize);
         g2d.setColor(new Color(186, 33, 41));

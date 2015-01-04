@@ -7,7 +7,7 @@ import java.awt.*;
 public class ParkBackground implements Drawable {
 
     public void draw(Graphics g) {
-        g.setColor(new Color(0, 232, 32));
+        g.setColor(new Color(142, 232, 5));
         g.fillRect(0, 0, 10000, 10000);
     }
 }

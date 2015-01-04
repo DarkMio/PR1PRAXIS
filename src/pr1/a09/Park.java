@@ -10,6 +10,7 @@ import java.util.Collection;
 public class Park {
 
     public static void main(String[] args) {
+        boolean forward = true;
         DirtyPainter painter = new DirtyPainter();
         Collection<PflanzeInit> park = factoryPark(10, 10);
         painter.add(new ParkBackground());
@@ -20,9 +21,17 @@ public class Park {
 
         for(int i = 0; i <= 102; i++) {
             if(i >= 100) {
-                i = 0;
+                forward = false;
             }
-            for(PflanzeInit p: park) {
+            if(i <= 0) {
+                forward = true;
+            }
+            if(!forward) {
+                i -= 2;
+            }
+
+            System.out.println(i);
+        for(PflanzeInit p: park) {
                 p.grow();
                 p.ChangeActivityTo(i);
             }
