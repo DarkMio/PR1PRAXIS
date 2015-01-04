@@ -43,4 +43,11 @@ public abstract class PflanzeInit implements Drawable {
         this.posY = posY;
     }
 
+    public void grow() {
+        if (size >= maxSize) {
+            return;
+        }
+        this.size += 1;
+    }
+
 }

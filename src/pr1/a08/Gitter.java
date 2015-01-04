@@ -12,8 +12,8 @@ public class Gitter implements Drawable {
     protected Color c;
     protected int dx;
     protected int dy;
-    protected int maxX = 1000;
-    protected int maxY = 1000;
+    protected final int maxX = 1000;
+    protected final int maxY = 1000;
 
     public Gitter(Color c, int dx, int dy) {
         this.c = c;
