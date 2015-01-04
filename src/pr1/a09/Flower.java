@@ -16,7 +16,7 @@ public class Flower extends PflanzeInit {
 
     public void draw(Graphics g) {
         // Let's make a lot of orientation-points:
-        int localsize = this.size * (activity/2);
+        int localsize = this.size * 5;
 
         int outerDiameter = localsize;
         int innerDiameter = localsize - (localsize/6);
@@ -37,7 +37,7 @@ public class Flower extends PflanzeInit {
         int ovalPosX = circleRelCenterX + (innerDiameter/2) - (ovalWidth / 2);
         int ovalPosY = circleRelCenterY - (ovalHeight / 2);
 
-        Graphics2D g2d = (Graphics2D) g;
+        Graphics2D g2d = new Graphics(g);
 
         g2d.rotate(activity/2, circleRelCenterX, circleRelCenterY);
 

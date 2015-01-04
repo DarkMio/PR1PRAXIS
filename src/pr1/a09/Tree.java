@@ -12,7 +12,7 @@ public class Tree extends PflanzeInit {
     protected double transangle;
 
     public Tree(int size, int posX, int posY, int activity, int maxSize, int cycles) {
-        super (size, posX, posY, activity/8, maxSize);
+        super (size, posX, posY, activity, maxSize);
         this.cycles = cycles;
         tree = new Color(89, 35, 19);
         foliage = new Color(9, 89, 8);
