@@ -34,7 +34,7 @@ public abstract class PflanzeInit implements Drawable {
         return posY;
     }
 
-    public void ChangeActivityTo(int activity) {
+    public void changeActivityTo(int activity) {
         this.activity = activity;
     }
 

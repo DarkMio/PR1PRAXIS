@@ -11,9 +11,9 @@ public class Test {
 //        Strauch strauch = new Strauch(100, 100, 100, 100, 1000);
         Flower flower = new Flower(30, 100, 100, 10, 100, 6);
         Flower flower2 = new Flower(10, 400, 400, 10, 100, 8);
-//        Tree tree = new Tree(7, 600, 600, 100, 15, 6);
-        painter.add(flower);
-        painter.add(flower2);
+        Tree tree = new Tree(7, 600, 1000, 100, 15, 10);
+        painter.add(tree);
+      //  painter.add(flower2);
 //        painter.add(baum);
 //        painter.add(strauch);
 //        painter.add(flower);
@@ -22,12 +22,13 @@ public class Test {
         painter.showDrawing();
         for(int i = 0; i <= 102; i++) {
             if(i == 101){i = 0;}
-            flower.ChangeActivityTo(i);
-            flower2.ChangeActivityTo(i);
-            //tree.grow();
+//            flower.changeActivityTo(i);
+//            flower2.changeActivityTo(i);
+            tree.grow();
+            tree.changeActivityTo(i);
             painter.showDrawing();
             try {
-                Thread.sleep(48);
+                Thread.sleep(12);
             } catch (InterruptedException e) {
                 System.out.println( "awakened prematurely" );
             }

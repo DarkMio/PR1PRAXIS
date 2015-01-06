@@ -12,7 +12,7 @@ public class Park {
     public static void main(String[] args) {
         boolean forward = true;
         DirtyPainter painter = new DirtyPainter();
-        Collection<PflanzeInit> park = factoryPark(10, 10);
+        Collection<PflanzeInit> park = factoryPark(3, 1);
         painter.add(new ParkBackground());
         for(PflanzeInit p:park) {
             painter.add(p);
@@ -31,10 +31,10 @@ public class Park {
             }
 
             System.out.println(i);
-        for(PflanzeInit p: park) {
-                p.grow();
-                p.ChangeActivityTo(i);
-            }
+            for(PflanzeInit p: park) {
+                    p.grow();
+                    p.changeActivityTo(i);
+                }
             painter.showDrawingAfterWaiting(1);
         }
     }
@@ -59,8 +59,6 @@ public class Park {
             int petals = 3 + (int)(Math.random() * ((15 - 3) + 1));
             park.add(new Flower(size, posX, posY, activity, size+5, petals));
         }
-        park.add(new Flower(10, 300, 300, 100, 5, 12));
-        System.out.println(park);
-        return park;
+    return park;
     }
 }
