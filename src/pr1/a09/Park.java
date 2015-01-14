@@ -52,12 +52,12 @@ public class Park {
         }
 
         for(int i = 0; i <= flowerCnt; i++) {
-            int size = 5 + (int)(Math.random() * ((20 - 5) + 1));
+            int size = 10 + (int)(Math.random() * ((100 - 10) + 1));
             int posX = 100 + (int)(Math.random() * ((1200 - 100) + 1));
             int posY = 300 + (int)(Math.random() * ((700 - 300) + 1));
             int activity = (int)(Math.random() * (100 + 1));
-            int petals = 3 + (int)(Math.random() * ((15 - 3) + 1));
-            park.add(new Flower(size, posX, posY, activity, size+5, petals));
+            int k = 3 + (int)(Math.random() * ((15 - 3) + 1));
+            park.add(new PlotFlower(size, posX, posY, activity, size+5, k));
         }
     return park;
     }
