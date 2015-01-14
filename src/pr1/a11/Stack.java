@@ -21,7 +21,7 @@ public class Stack extends pr1.a11.AbstractStack {
 
     public Object peek() {
         if (!(size == 0)) {
-            return ob[size];
+            return ob[size - 1];
         } else {
             throw(new IllegalArgumentException("Stack is empty!"));
         }

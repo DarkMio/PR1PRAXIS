@@ -34,10 +34,8 @@ public class StackTest {
         }
 
         for(int i = 0; i < 1024; i++) {
-            s.push(new String(UUID.randomUUID().toString()));
-        }
-        for(int i = 0; i < 1024; i++) {
             ls.push(new String(UUID.randomUUID().toString()));
+            s.push(new String(UUID.randomUUID().toString()));
         }
 
         try {
