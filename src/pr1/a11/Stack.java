@@ -9,7 +9,7 @@ public class Stack extends pr1.a11.AbstractStack {
     }
     
     public Stack () {
-        this(1024)
+        this(1024);
     }
 
     public Object pop() {
