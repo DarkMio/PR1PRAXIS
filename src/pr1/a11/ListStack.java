@@ -11,7 +11,7 @@ public class ListStack extends AbstractStack {
     }
     
     public ListStack () {
-        this(1024)
+        this(1024);
     }
 
     public Object pop() {
