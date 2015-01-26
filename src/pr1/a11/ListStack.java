@@ -9,6 +9,10 @@ public class ListStack extends AbstractStack {
     public ListStack(int capacity) {
         this.al = new ArrayList<Object>(capacity);
     }
+    
+    public ListStack () {
+        this(1024);
+    }
 
     public ListStack() {
         this(1024);

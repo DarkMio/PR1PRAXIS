@@ -11,8 +11,7 @@ public abstract class AbstractStack {
     }
 
     public AbstractStack () {
-        size = 0;
-        capacity = 1024;
+        this(1024);
     }
 
     public abstract Object pop();

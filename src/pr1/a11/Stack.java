@@ -7,6 +7,10 @@ public class Stack extends pr1.a11.AbstractStack {
     public Stack (int capacity) {
         ob = new Object[capacity];
     }
+    
+    public Stack () {
+        this(1024);
+    }
 
     public Stack () {
         this(1024);
