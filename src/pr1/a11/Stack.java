@@ -8,6 +8,10 @@ public class Stack extends pr1.a11.AbstractStack {
         ob = new Object[capacity];
     }
 
+    public Stack () {
+        this(1024);
+    }
+
     public Object pop() {
         Object o = null;
         boolean underflow = size == 0;
@@ -33,5 +37,13 @@ public class Stack extends pr1.a11.AbstractStack {
         } else {
             throw(new IllegalArgumentException("Stack is full!"));
         }
+    }
+
+    public String toString() {
+        String s = new String();
+        for (int i = 0; i < size; i++) {
+            s = s + " " + ob[i];
+        }
+        return s;
     }
 }

@@ -10,6 +10,10 @@ public class ListStack extends AbstractStack {
         this.al = new ArrayList<Object>(capacity);
     }
 
+    public ListStack() {
+        this(1024);
+    }
+
     public Object pop() {
         if (!(size == 0)) {
             return al.remove(--size);
@@ -29,5 +33,13 @@ public class ListStack extends AbstractStack {
         } else {
             throw(new IllegalArgumentException("Stack is full!"));
         }
+    }
+
+    public String toString() {
+        String s = new String();
+        for(Object o: al) {
+            s = s + " " + o;
+        }
+        return s;
     }
 }
