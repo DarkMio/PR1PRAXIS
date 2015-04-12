@@ -12,10 +12,6 @@ public class Stack extends pr1.a11.AbstractStack {
         this(1024);
     }
 
-    public Stack () {
-        this(1024);
-    }
-
     public Object pop() {
         Object o = null;
         boolean underflow = size == 0;

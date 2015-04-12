@@ -5,7 +5,6 @@ import org.junit.Assert;
 import pr1.a11.AbstractStack;
 import pr1.a11.Stack;
 import pr1.a11.ListStack;
-
 import java.util.Scanner;
 
 public class StackTest {

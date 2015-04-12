@@ -14,10 +14,6 @@ public class ListStack extends AbstractStack {
         this(1024);
     }
 
-    public ListStack() {
-        this(1024);
-    }
-
     public Object pop() {
         if (!(size == 0)) {
             return al.remove(--size);
