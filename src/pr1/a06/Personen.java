@@ -1,11 +1,12 @@
 //																	Zier, 824320
 package pr1.a06;
 
-import schimkat.berlin.lernhilfe2014ws.objectPlay.Factory;
-import schimkat.berlin.lernhilfe2014ws.objectPlay.PersonList;
+//import schimkat.berlin.lernhilfe2014ws.objectPlay.Factory;
+//import schimkat.berlin.lernhilfe2014ws.objectPlay.PersonList;
+
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.io.PrintWriter;
 
 public class Personen {
 
@@ -26,11 +27,11 @@ public class Personen {
     public static ArrayList<Person> createTestPersonliste() {
         ArrayList<Person> personList = new ArrayList<Person>();
 
-        PersonList testPersonList = Factory.createTestPersonliste();
+  /*      PersonList testPersonList = Factory.createTestPersonliste();
         for(schimkat.berlin.lernhilfe2014ws.objectPlay.Person p: testPersonList) {
             personList.add(new Person(p));
         }
-
+*/
         return personList;
     }
 }

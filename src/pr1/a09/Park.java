@@ -1,9 +1,7 @@
 package pr1.a09;
 
 import schimkat.berlin.lernhilfe2014ws.graphics.DirtyPainter;
-import schimkat.berlin.lernhilfe2014ws.graphics.Drawable;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collection;
 

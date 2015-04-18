@@ -1,10 +1,9 @@
 package pr1.a10;
 
-import java.io.PrintWriter;
-import java.lang.Character;
-import java.util.Scanner;
-
 import schimkat.berlin.lernhilfe2014ws.io.DirtyFileReader;
+
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class StringUtil {
 

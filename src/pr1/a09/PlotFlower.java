@@ -1,8 +1,6 @@
 package pr1.a09;
 
 import java.awt.*;
-import java.awt.geom.Line2D;
-import java.awt.geom.Point2D;
 
 public class PlotFlower extends PflanzeInit {
 

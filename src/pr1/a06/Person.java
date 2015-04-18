@@ -16,10 +16,10 @@ public class Person {
         this(person.vorname, person.nachname, person.geburtsjahr);
     }
 
-    public Person(schimkat.berlin.lernhilfe2014ws.objectPlay.Person other) {
+/*    public Person(schimkat.berlin.lernhilfe2014ws.objectPlay.Person other) {
         this(other.getVorname(), other.getNachname(), other.getGeburtsjahr());
     }
-
+*/
     public String toString() {
         return String.format(vorname + " " + nachname + ", " + geburtsjahr);
     }

@@ -4,10 +4,11 @@ package pr1.a07.mitSet;
 import pr1.a06.Person;
 import schimkat.berlin.lernhilfe2014ws.objectPlay.Factory;
 import schimkat.berlin.lernhilfe2014ws.objectPlay.PersonList;
+
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
-import java.io.PrintWriter;
 
 public class Personen {
 
