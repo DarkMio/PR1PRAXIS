@@ -1,4 +1,4 @@
-package pr2.a03;
+package pr2.a02;
 
 public class IllegalDateException extends Exception {
 

@@ -1,4 +1,4 @@
-package pr2.a03;
+package pr2.a02;
 
 import java.io.File;
 import java.io.FileNotFoundException;
