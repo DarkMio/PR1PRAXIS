@@ -4,8 +4,6 @@ Entsprechende Lösungen meiner Aufgaben
 
 ##Programmieren 1
 
----
-
 - a01, a02: Schachbrett, SomeFunctions
 - a03: Aufgabe03, Hypothenuse, TestSchachbrett
 - a04: FirstInput
@@ -22,8 +20,6 @@ Entsprechende Lösungen meiner Aufgaben
 ---
 
 ##Programmieren 2
-
----
 
 - a01: Exceptions Printtest
 - a02: Date Object, Date Test, eigene IllegalDateException
