@@ -8,7 +8,7 @@ public class DateTest {
 
     public static void main(String[] args) {
         try {
-            Scanner txt = new Scanner(new File("./testfiles/pr2_a02_date.txt"));
+            Scanner txt = new Scanner(new File("./data/pr2_a02_date.txt"));
 
             while (txt.hasNextLine()) {
                 int day = txt.nextInt();
