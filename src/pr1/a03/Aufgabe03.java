@@ -9,8 +9,8 @@ import java.io.PrintWriter;
 public class Aufgabe03 {
 
 	public static void main(String[] args){
-		writeIntNumberFile("03c_randInt.txt", 1000);
-		writeMixedNumberFile("03c_randMix.txt", 1000, 7);
+		writeIntNumberFile("pr1_03c_randInt.txt", 1000);
+		writeMixedNumberFile("pr1_03c_randMix.txt", 1000, 7);
 	}
 	
 	public static void writeIntNumberFile(String filename, int numberCount){

@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 public class Hypothenuse {
 	
 	public static void main(String[] args){
-		DirtyFileWriter dfw = new DirtyFileWriter("03b_hypothenuse.txt");
+		DirtyFileWriter dfw = new DirtyFileWriter("pr1_03b_hypothenuse.txt");
 		// PrintWriter in file
 		PrintWriter fout = new PrintWriter(dfw, false);
 		// PrintWriter in console

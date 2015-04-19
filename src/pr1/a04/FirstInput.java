@@ -14,26 +14,26 @@ public class FirstInput {
         // Proper number handling:
         Locale.setDefault(Locale.US);
 
-        String csoFilename = "./testfiles/zahlen01.txt";
-        Scanner randMixFin = provideScanner("03c_randInt.txt");
-        Scanner randIntFin = provideScanner("03c_randInt.txt");
+        String csoFilename = "./testfiles/pr1_zahlen01.txt";
+        Scanner randMixFin = provideScanner("pr1_03c_randInt.txt");
+        Scanner randIntFin = provideScanner("pr1_03c_randInt.txt");
         Scanner csoIn = provideScanner(csoFilename);
 
         PrintWriter out = new PrintWriter(System.out, true);
 
-        out.println("countSumOf ./testfiles/zahlen01.txt");
+        out.println("countSumOf ./testfiles/pr1_zahlen01.txt");
         out.println(countSumOf(csoIn));
         out.println(countSumOf(csoFilename));
 
-        out.println("\nReading and printing 03c_randMix.txt:");
+        out.println("\nReading and printing pr1_03c_randMix.txt:");
         printNumbersFrom(randMixFin, 8, 4, out);
         randMixFin.close();
 
-        out.println("\nReading and printing 03c_randInt.txt:");
+        out.println("\nReading and printing pr1_03c_randInt.txt:");
         printNumbersFrom(randIntFin, 4, 4, out);
         randIntFin.close();
 
-        copyNumberFile("03c_randMix.txt", "04b2_copyNumber.txt");
+        copyNumberFile("pr1_03c_randMix.txt", "pr1_04b2_copyNumber.txt");
     }
 
     public static Scanner provideScanner(String filename) {

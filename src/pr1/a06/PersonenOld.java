@@ -22,8 +22,8 @@ public class PersonenOld {
         printPersons(testPersonen, out);
         printPersons(testPersonen, "06e_testperson.txt");
 
-        HashSet<Person> kommilitonen = getPersonsFrom("./data/kommilitonen.txt");
-        HashSet<Person> sportfreunde = getPersonsFrom("./data/sportfreunde.txt");
+        HashSet<Person> kommilitonen = getPersonsFrom("./data/pr1_kommilitonen.txt");
+        HashSet<Person> sportfreunde = getPersonsFrom("./data/pr1_sportfreunde.txt");
 
         HashSet<Person> KundS = new HashSet<Person>(kommilitonen);
         KundS.retainAll(sportfreunde);

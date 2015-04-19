@@ -21,8 +21,8 @@ public class Personen {
         printPersons(testPersonen, out);
         printPersons(testPersonen, "05c_testperson.txt");
 
-        PersonSet kommilitonen = getPersonsFrom("./data/kommilitonen.txt");
-        PersonSet sportfreunde = getPersonsFrom("./data/sportfreunde.txt");
+        PersonSet kommilitonen = getPersonsFrom("./data/pr1_kommilitonen.txt");
+        PersonSet sportfreunde = getPersonsFrom("./data/pr1_sportfreunde.txt");
 
         PersonSet KundS = new PersonSet(kommilitonen);
         KundS.retainAll(sportfreunde);
@@ -33,9 +33,9 @@ public class Personen {
         PersonSet TvereinigtK = new PersonSet(kommilitonen);
         TvereinigtK.addAll(sportfreunde);
 
-        printPersons(KundS, "05e_KundS.txt");
-        printPersons(KaberNichtS, "05e_KaberNichtS.txt");
-        printPersons(TvereinigtK, "05e_TverinigtK.txt");
+        printPersons(KundS, "pr1_05e_KundS.txt");
+        printPersons(KaberNichtS, "pr1_05e_KaberNichtS.txt");
+        printPersons(TvereinigtK, "pr1_05e_TverinigtK.txt");
     }
 
     public static void printPersons(PersonSet persons, PrintWriter out) {

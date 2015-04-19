@@ -26,7 +26,7 @@ public class UebungScanner {
 
     public static void scannerAusprobieren() {
         PrintWriter out = new PrintWriter(System.out, true);
-        DirtyFileReader dfr = new DirtyFileReader("./testfiles/zahlen01.txt");
+        DirtyFileReader dfr = new DirtyFileReader("./testfiles/pr1_zahlen01.txt");
         Scanner in = new Scanner(dfr);
 
         // Vorübung a)

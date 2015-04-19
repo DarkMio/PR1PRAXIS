@@ -10,8 +10,8 @@ import java.io.PrintWriter;
 public class TestSchachbrett {
 
 	public static void main(String[] args){
-		printSchachbrett("03a_reverse.txt", true);
-		printSchachbrett("03a_forward.txt", false);
+		printSchachbrett("pr1_03a_reverse.txt", true);
+		printSchachbrett("pr1_03a_forward.txt", false);
 	}
 	
 	public static void printSchachbrett(String filename, boolean isReverse){
