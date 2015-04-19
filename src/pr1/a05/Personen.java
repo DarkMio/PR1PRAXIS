@@ -1,12 +1,13 @@
 //																	Zier, 824320
 package pr1.a05;
 
+import schimkat.berlin.lernhilfe2014ws.io.DirtyFileReader;
+import schimkat.berlin.lernhilfe2014ws.io.DirtyFileWriter;
 import schimkat.berlin.lernhilfe2014ws.objectPlay.Factory;
 import schimkat.berlin.lernhilfe2014ws.objectPlay.Person;
 import schimkat.berlin.lernhilfe2014ws.objectPlay.PersonList;
 import schimkat.berlin.lernhilfe2014ws.objectPlay.PersonSet;
-import schimkat.berlin.lernhilfe2014ws.io.DirtyFileWriter;
-import schimkat.berlin.lernhilfe2014ws.io.DirtyFileReader;
+
 import java.io.PrintWriter;
 import java.util.Scanner;
 

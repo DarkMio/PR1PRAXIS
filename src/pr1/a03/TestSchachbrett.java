@@ -2,8 +2,9 @@
 
 package pr1.a03;
 
-import schimkat.berlin.lernhilfe2014ws.io.DirtyFileWriter;
 import pr1.a02.Schachbrett;
+import schimkat.berlin.lernhilfe2014ws.io.DirtyFileWriter;
+
 import java.io.PrintWriter;
 
 public class TestSchachbrett {

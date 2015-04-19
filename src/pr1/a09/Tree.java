@@ -1,7 +1,6 @@
 package pr1.a09;
 
 import java.awt.*;
-import java.util.Random;
 
 public class Tree extends PflanzeInit {
 

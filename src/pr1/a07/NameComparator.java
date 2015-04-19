@@ -1,8 +1,9 @@
 //																	Zier, 824320
 package pr1.a07;
 
-import java.util.Comparator;
 import pr1.a06.Person;
+
+import java.util.Comparator;
 
 public class NameComparator implements Comparator<Person> {
     @Override

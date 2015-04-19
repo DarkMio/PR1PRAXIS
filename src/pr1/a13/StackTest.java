@@ -1,10 +1,11 @@
 package pr1.a13;
 
-import org.junit.Test;
 import org.junit.Assert;
+import org.junit.Test;
 import pr1.a11.AbstractStack;
-import pr1.a11.Stack;
 import pr1.a11.ListStack;
+import pr1.a11.Stack;
+
 import java.util.Scanner;
 
 public class StackTest {

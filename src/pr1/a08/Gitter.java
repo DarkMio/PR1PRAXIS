@@ -1,11 +1,9 @@
 //																	Zier, 824320
 package pr1.a08;
 
-import java.awt.Color;
-import java.awt.Graphics;
-
-import schimkat.berlin.lernhilfe2014ws.graphics.DirtyPainter;
 import schimkat.berlin.lernhilfe2014ws.graphics.Drawable;
+
+import java.awt.*;
 
 public class Gitter implements Drawable {
 
