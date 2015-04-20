@@ -2,10 +2,11 @@ package pr2.a02;
 
 public class Date {
 
-    int day, month, year;
+    protected int day, month, year;
 
     public Date (int day, int month, int year) throws IllegalDateException {
         boolean even = (month % 2) == 0;
+        int[] monthDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
         // Valid months: 1 - 12
         if (!(month > 0 && month < 13)) {
@@ -17,24 +18,14 @@ public class Date {
             throw new IllegalDateException("Day out of range. (<1)");
         }
 
-        // Fucking February can't behave.
-        if (month == 2 && day > 28) {
-            throw new IllegalDateException("Day out of range. (>28 in February)");
-        }
-
-        // Even months only have 30 days.
-        if (even && day > 30) {
-            throw new IllegalDateException("Day out of range (even month && >31)");
-        }
-
-        // Uneven months have 31 days.
-        if (!even && day > 31) {
-            throw new IllegalDateException("Day is out of reach (uneven month && >32)");
-        }
-
         // Who are we to judge the year anyway?
         if (year < 0 || year > 3000) {
-            throw new IllegalDateException("Year out of range.");
+            throw new IllegalDateException("Year out of range. ([0...3000])");
+        }
+
+        // Get how many days a certain month has and compare it.
+        if (monthDays[month-1] < day) {
+            throw new IllegalDateException(String.format("Day out of range. (<%02d)", day));
         }
 
         // All done, we can initialize the object.

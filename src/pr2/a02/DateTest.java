@@ -18,7 +18,7 @@ public class DateTest {
                     new Date(day, month, year);
                     System.out.format("Korrektes Datum: %02d.%02d.%02d%n", day, month, year);
                 } catch (IllegalDateException e) {
-                    System.err.format("Falesches Datum: %02d.%02d.%02d: %s%n", day, month, year, e.getMessage());
+                    System.err.format("Falsches  Datum: %02d.%02d.%02d: %s%n", day, month, year, e.getMessage());
                 }
             }
         } catch (FileNotFoundException e) {
