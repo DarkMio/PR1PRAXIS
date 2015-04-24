@@ -1,24 +1,28 @@
 package pr2.a03;
 
+import schimkat.berlin.lernhilfe2014ws.graphics.DirtyPainter;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Rekursion {
+
+public class RekursionDP {
 
     public static void main(String[] args) {
         int[] array = createArray("./data/pr2_a03_numbers.txt");
         print(array);
-        final int width = 1900;
-        final int height = 900;
-        ViewPort vp = new ViewPort("Binary Search", width, height);
-        System.out.println(indexOf(vp, array, 102572, width, height));
-        System.out.println(indexOfRecursive(vp, array, 102572, width, height));
+        final int width = 800;
+        final int height = 400;
+        //ViewPort vp = new ViewPort("Binary Search", width, height);
+        DirtyPainter dp = new DirtyPainter();
+        System.out.println(indexOf(dp, array, 999988, width, height));
+        System.out.println(indexOfRecursive(dp, array, 999988, width, height));
     }
 
     public static int[] createArray(Scanner in) {
-        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<Integer>();
 
         while (in.hasNextInt()){
             list.add(in.nextInt());
@@ -47,38 +51,40 @@ public class Rekursion {
         System.out.println();
     }
 
-    public static void print(ViewPort vp, int[] array, double l, double r, int c, int w, int h, boolean superheight){
+    public static void print(DirtyPainter vp, int[] array, double l, double r, int c, int w, int h, boolean superheight){
         l = w*(l+1)/array.length;
         r = w*(r-1)/array.length;
         if (superheight) {
             c = 5 + h*(c+1)/array.length;
         }
-        vp.line((int) l, c, (int) r, c, 20*c, 5*c, 3*c);
+        if (c%100 == 0) {
+            vp.add(new Line((int) l, c, (int) r, c));
+            vp.showDrawingAfterWaiting(100);
+        } else {
+            vp.add(new Line((int) l, c, (int) r, c));
+        }
     }
 
-    public static int indexOf(ViewPort vp, int[] array, int num, int width, int height) {
+    public static int indexOf(DirtyPainter vp, int[] array, int num, int width, int height) {
         for(int i = 0; i < array.length; i++) {
             print(vp, array, 0, i, i, width, height, true);
             if (array[i] == num) {
                 return i;
             }
-            if (array[i] > num) {
-                return -1;
-            }
         }
         return -1;
     }
 
-    public static int indexOfRecursive(ViewPort vp, int[] a, int z, int w, int h) {
+    public static int indexOfRecursive(DirtyPainter vp, int[] a, int z, int w, int h) {
         if (a[0] > z || a[a.length-1] < z) return -1;
         return indexOfRecursive(vp, a, z, 0, a.length - 1, 1, w, h);
     }
 
-    public static int indexOfRecursive(ViewPort vp, int[] a, int z, int l, int r, int c, int w, int h){
+    public static int indexOfRecursive(DirtyPainter vp, int[] a, int z, int l, int r, int c, int w, int h){
         print(vp, a, l, r, c, w, h, false);
         if (l == r && a[l] == z) {
             return l;
-        } else if (r - l < 2) {
+        } else if (l == r) {
             return -1;
         }
         int g = (l+r) / 2;
