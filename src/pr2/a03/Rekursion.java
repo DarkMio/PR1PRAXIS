@@ -10,15 +10,15 @@ public class Rekursion {
     public static void main(String[] args) {
         int[] array = createArray("./data/pr2_a03_numbers.txt");
         print(array);
-        final int width = 1900;
+        final int width = 1200;
         final int height = 900;
         ViewPort vp = new ViewPort("Binary Search", width, height);
-        System.out.println(indexOf(vp, array, 102572, width, height));
-        System.out.println(indexOfRecursive(vp, array, 102572, width, height));
+        System.out.println(indexOf(vp, array, 992572, width, height));
+        System.out.println(indexOfRecursive(vp, array, 992572, width, height));
     }
 
     public static int[] createArray(Scanner in) {
-        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<Integer>();
 
         while (in.hasNextInt()){
             list.add(in.nextInt());

@@ -13,12 +13,14 @@ public class RekursionDP {
     public static void main(String[] args) {
         int[] array = createArray("./data/pr2_a03_numbers.txt");
         print(array);
-        final int width = 800;
+        final int width = 750;
         final int height = 400;
         //ViewPort vp = new ViewPort("Binary Search", width, height);
         DirtyPainter dp = new DirtyPainter();
         System.out.println(indexOf(dp, array, 999988, width, height));
         System.out.println(indexOfRecursive(dp, array, 999988, width, height));
+        dp.add(new CoordinateSystem(array, height, width));
+        dp.showDrawing();
     }
 
     public static int[] createArray(Scanner in) {
@@ -57,12 +59,7 @@ public class RekursionDP {
         if (superheight) {
             c = 5 + h*(c+1)/array.length;
         }
-        if (c%100 == 0) {
-            vp.add(new Line((int) l, c, (int) r, c));
-            vp.showDrawingAfterWaiting(100);
-        } else {
-            vp.add(new Line((int) l, c, (int) r, c));
-        }
+        vp.add(new Line((int) l, c, (int) r, c));
     }
 
     public static int indexOf(DirtyPainter vp, int[] array, int num, int width, int height) {
