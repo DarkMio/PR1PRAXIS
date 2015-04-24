@@ -28,11 +28,11 @@ public class CoordinateSystem implements Drawable {
         g.drawLine(midX, 0, midX, height);
         g.drawLine(0, 0, width, 0);
         g.setColor(Color.red);
-        g.drawString(a[a.length/2]+"", midX, 30);
-        g.drawString(a[0]+"", 0, 30);
-        g.drawString(a[a.length-1]+"", width-30, 30);
+        g.drawString(a[a.length/2]+"", midX + 10, 20);
+        g.drawString(a[0]+"", 0, 20);
+        g.drawString(a[a.length-1]+"", width-30, 20);
         for(double i = incrementWidth; i <= width; i += incrementWidth + 1) {
-            g.drawLine((int) i, 0 - 5, (int) i, 0 + 5);
+            g.drawLine((int) i, -5, (int) i, 5);
         }
 
         for(double i = incrementHeight; i <= height; i += incrementHeight + 1) {

@@ -13,8 +13,8 @@ public class Rekursion {
         final int width = 1200;
         final int height = 900;
         ViewPort vp = new ViewPort("Binary Search", width, height);
-        System.out.println(indexOf(vp, array, 992572, width, height));
-        System.out.println(indexOfRecursive(vp, array, 992572, width, height));
+        System.out.println(indexOf(vp, array, 757798, width, height));
+        System.out.println(indexOfRecursive(vp, array, 757798, width, height));
     }
 
     public static int[] createArray(Scanner in) {

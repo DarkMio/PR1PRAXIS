@@ -17,8 +17,8 @@ public class RekursionDP {
         final int height = 400;
         //ViewPort vp = new ViewPort("Binary Search", width, height);
         DirtyPainter dp = new DirtyPainter();
-        System.out.println(indexOf(dp, array, 999988, width, height));
-        System.out.println(indexOfRecursive(dp, array, 999988, width, height));
+        System.out.println(indexOf(dp, array, 757798, width, height));
+        System.out.println(indexOfRecursive(dp, array, 757798, width, height));
         dp.add(new CoordinateSystem(array, height, width));
         dp.showDrawing();
     }
