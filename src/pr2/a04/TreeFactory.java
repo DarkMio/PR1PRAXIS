@@ -35,15 +35,19 @@ public class TreeFactory {
     }
 
     public static String[] cutArray(String[] a) {
-        String[] cut = new String[a.length-1];
-        for (int i = 1; )
+        if(a.length > 1) {
+            String[] cut = new String[a.length - 1];
+            System.arraycopy(a, 1, cut, 0, a.length - 1);
+            return cut;
+        } else {
+            return a;
+        }
     }
 
     public static String[] readLines(Scanner in) {
         Vector<String> list = new Vector<String>();
         while (in.hasNextLine()) {
             String s = in.nextLine();
-            System.out.println(s);
             list.add(s);
         }
 
@@ -59,9 +63,7 @@ public class TreeFactory {
         Vector<String> cache;
         String[] array;
         QadTree tree = new QadTree(lines[0]);
-        for (String s: lines) {
-            System.out.println(s);
-        }
+        lines = cutArray(lines);
         tree.setLogging(true);
         for(String s: lines) {
             in = new Scanner(s);
@@ -73,7 +75,11 @@ public class TreeFactory {
             cache.remove(0);
             array = new String[cache.size()];
             for(int i = 0; i < array.length; i++) {
-                array[i] = cache.get(0);
+                array[i] = cache.get(i);
+            }
+            System.out.println("Head: " + head);
+            for(String str: array) {
+                System.out.print(" " + str + " ");
             }
             tree.addChilds(head, array);
         }
