@@ -28,5 +28,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="lernhilfe2015ss-tree-01" level="project" />
   </component>
 </module>

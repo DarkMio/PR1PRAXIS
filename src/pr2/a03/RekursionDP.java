@@ -65,6 +65,9 @@ public class RekursionDP {
     public static int indexOf(DirtyPainter vp, int[] array, int num, int width, int height) {
         for(int i = 0; i < array.length; i++) {
             print(vp, array, 0, i, i, width, height, true);
+            if (array[i] > num) {
+                return -1;
+            }
             if (array[i] == num) {
                 return i;
             }
