@@ -13,10 +13,10 @@ import java.util.Scanner;
 public class TreeFactory {
 
     public static void main(String[] args) {
-        // QadTree name = buildTree();
-        // name.showInGUI();
+        QadTree example = buildTree();
+        example.showInGUI();
 
-        QadTree tree = createTree("./data/lib-tree/pudge.txt");
+        QadTree tree = createTree("./data/lib-tree/filetree.txt");
         tree.showInGUI();
     }
 
@@ -45,41 +45,34 @@ public class TreeFactory {
         return false;
     }
 
+    public static String[] readLines(Scanner in) {
+        ArrayList<String> list = new ArrayList<String>();
 
-    public static ArrayList<String> mergeConcat(ArrayList<String> cache) {
-        String concat = "";
-        boolean con = false;
-        ArrayList<String> copyCache = new ArrayList<String>(cache);
-        int index = 0;
-        int start = 0;
-        int end = 0;
-        boolean ends = false;
-        for (int i = 0; i < cache.size(); i++) {
-            String str = cache.get(i);
-            if (!con) {
-                con = str.startsWith("\"");
-                start = i;
+        while (in.hasNextLine()) {
+            String s = in.nextLine();
+            if (s.isEmpty()) {
+                continue;
             }
-            if (con) {
-                concat += str + " ";
-                cache.remove(str);
-                ends = str.endsWith("\"");
-                if (ends) {
-                    end = i;
-                    for (int j = start+1; j<=end; i++) {
-                        cache.remove(j);
-                    }
-                    i = 0;
-                }
-            }
+            list.add(s);
         }
+        return fromListToArray(list);
+    }
 
-        cache.add(start, concat);
-        for (int i = start+1; i <= end; i++){
-            cache.remove(i);
+    public static String[] readLine(Scanner in) {
+        ArrayList<String> list = new ArrayList<String>();
+
+        while (in.hasNext()) {
+            list.add(in.next());
         }
-        cache.remove("");
-        return cache;
+        return fromListToArray(list);
+    }
+
+    public static String[] fromListToArray(ArrayList<String> list) {
+        String[] array = new String[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            array[i] = list.get(i);
+        }
+        return array;
     }
 
     public static String[] cutArray(String[] a) {
@@ -92,47 +85,19 @@ public class TreeFactory {
         }
     }
 
-    public static String[] readLines(Scanner in) {
-        ArrayList<String> list = new ArrayList<String>();
-        while (in.hasNextLine()) {
-            String s = in.nextLine();
-            if (s.isEmpty()){
-                continue;
-            }
-            list.add(s);
-        }
-        String[] array = new String[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            array[i] = list.get(i);
-        }
-        return array;
-    }
-
     public static QadTree createTree(String[] lines) {
-        Scanner in;
-        ArrayList<String> cache;
-        String[] array;
         QadTree tree = new QadTree(lines[0]);
         tree.setLogging(true);
 
         for(int i = 1; i < lines.length; i++) {
-            in = new Scanner(lines[i]);
-            cache = new ArrayList<String>();
-            while(in.hasNext()) {
-                cache.add(in.next());
-            }
-            cache = mergeConcat(cache);
-            String head = cache.get(0);
-            cache.remove(0);
+            Scanner in = new Scanner(lines[i]);
+            String[] array = readLine(in);
+            String head = array[0];
+            array = cutArray(array);
 
-            array = new String[cache.size()];
-            for(int j = 0; j < array.length; j++) {
-                array[j] = cache.get(j);
-            }
             if (treeHasNode(tree, head)){
                 tree.addChilds(head, array);
             }
-            System.out.println(head + " " + array);
         }
         return tree;
     }
@@ -165,5 +130,4 @@ public class TreeFactory {
 
         return tree;
     }
-
 }

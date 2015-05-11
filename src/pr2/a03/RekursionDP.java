@@ -71,6 +71,9 @@ public class RekursionDP {
             if (array[i] == num) {
                 return i;
             }
+            if (array[i] > num) {
+                return -1;
+            }
         }
         return -1;
     }

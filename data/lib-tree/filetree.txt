@@ -1,8 +1,7 @@
 root
-root Users "Program Files" Pyrhon MinGW Windows
-Users "All Users" Mio
+root Users Pyrhon MinGW Windows
+Users Mio
 Mio Documents Projects Pictures Desktop
 Python lib bin include DLLa
 MinGW lib bin include share var
 Windows Logs System32 Core Boot debug
-"Program Files" Office Adobe HexChat IntelliJ
