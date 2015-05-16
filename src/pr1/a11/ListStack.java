@@ -36,7 +36,7 @@ public class ListStack extends AbstractStack {
     }
 
     public String toString() {
-        String s = new String();
+        String s = "";
         for(Object o: al) {
             s = s + " " + o;
         }

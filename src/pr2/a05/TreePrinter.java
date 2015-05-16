@@ -48,11 +48,7 @@ public class TreePrinter {
         try {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path));
             return (QadTree) ois.readObject();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
         System.exit(-1);

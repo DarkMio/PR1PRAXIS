@@ -24,7 +24,7 @@ public class CoordinateSystem implements Drawable {
         double incrementWidth = midX/25;
         double incrementHeight = midY/25;
         g.setColor(Color.cyan);
-        g.setFont(new Font("Arial", 10, 10));
+        g.setFont(new Font("Arial", Font.PLAIN, 10));
         g.drawLine(midX, 0, midX, height);
         g.drawLine(0, 0, width, 0);
         g.setColor(Color.red);

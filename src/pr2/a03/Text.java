@@ -4,9 +4,6 @@ import schimkat.berlin.lernhilfe2014ws.graphics.Drawable;
 
 import java.awt.*;
 
-/**
- * Created by Mio on 24.04.2015.
- */
 public class Text implements Drawable {
 
     private String s;

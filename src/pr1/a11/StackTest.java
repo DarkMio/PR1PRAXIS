@@ -36,19 +36,19 @@ public class StackTest {
         }
 
         for(int i = 0; i < 1024; i++) {
-            ls.push(new String(UUID.randomUUID().toString()));
-            s.push(new String(UUID.randomUUID().toString()));
-            standardLS.push(new String(UUID.randomUUID().toString()));
-            standardS.push(new String(UUID.randomUUID().toString()));
+            ls.push(UUID.randomUUID().toString());
+            s.push(UUID.randomUUID().toString());
+            standardLS.push(UUID.randomUUID().toString());
+            standardS.push(UUID.randomUUID().toString());
         }
 
         try {
-            s.push(new String(UUID.randomUUID().toString())); // Oh noes, overflows!
+            s.push(UUID.randomUUID().toString()); // Oh noes, overflows!
         } catch (IllegalArgumentException e) {
             out.println("s.push(): " + e);
         }
         try {
-            ls.push(new String(UUID.randomUUID().toString())); // Oh noes, overflows!
+            ls.push(UUID.randomUUID().toString()); // Oh noes, overflows!
         } catch (IllegalArgumentException e) {
             out.println("ls.push(): " + e);
         }

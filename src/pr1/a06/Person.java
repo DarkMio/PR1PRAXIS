@@ -46,9 +46,8 @@ public class Person {
 
         if (geburtsjahr != person.geburtsjahr) return false;
         if (nachname != null ? !nachname.equals(person.nachname) : person.nachname != null) return false;
-        if (vorname != null ? !vorname.equals(person.vorname) : person.vorname != null) return false;
+        return !(vorname != null ? !vorname.equals(person.vorname) : person.vorname != null);
 
-        return true;
     }
 
     @Override

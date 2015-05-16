@@ -19,7 +19,7 @@ public class Tree extends PflanzeInit {
     }
 
     public void drawCircles(Graphics g, int x1, int y1, double angle, int size, int cycles) {
-        // Draws the leavlets of a tree
+        // Draws the leaflets of a tree
         double pos = size * 10 /2;
         int x2 = x1 + (int) (Math.cos(Math.toRadians(angle)) * pos);
         int y2 = y1 + (int) (Math.sin(Math.toRadians(angle)) * pos);

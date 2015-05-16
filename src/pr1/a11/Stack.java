@@ -40,7 +40,7 @@ public class Stack extends pr1.a11.AbstractStack {
     }
 
     public String toString() {
-        String s = new String();
+        String s = "";
         for (int i = 0; i < size; i++) {
             s = s + " " + ob[i];
         }

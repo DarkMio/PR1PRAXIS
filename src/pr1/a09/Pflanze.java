@@ -2,14 +2,14 @@ package pr1.a09;
 
 public interface Pflanze {
 
-    public double getSize();
+    double getSize();
 
-    public double setSize();
+    double setSize();
 
-    public double getX();
-    public double getY();
+    double getX();
+    double getY();
 
-    public void setPosition(double posX, double posY);
+    void setPosition(double posX, double posY);
 
-    public void changeActivityTo(double activity);
+    void changeActivityTo(double activity);
 }

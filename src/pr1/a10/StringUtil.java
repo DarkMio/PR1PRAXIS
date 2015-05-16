@@ -54,8 +54,7 @@ public class StringUtil {
     public static double getRatioWhitespace(String s) {
         int len = s.length();
         int cnt = getWhitespaceCount(s);
-        double ratio = cnt * 100 / len;
-        return ratio;
+        return (double) (cnt * 100 / len);
     }
 
     public static String[] createTestStrings01() {
@@ -79,7 +78,6 @@ public class StringUtil {
             wsCnt += getWhitespaceCount(line) + 1;
             charCnt += line.length() + 1;
         }
-        double ratio = wsCnt * 100 / charCnt;
-        return ratio;
+        return wsCnt * 100 / charCnt;
     }
 }

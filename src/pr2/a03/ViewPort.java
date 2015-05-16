@@ -12,17 +12,17 @@ import java.util.LinkedList;
 
 
 /**
- * Eine Klasse für einfache Grafiken.
+ * Eine Klasse fï¿½r einfache Grafiken.
  *
  * <br/><br/>
  *
- * Damit ist es möglich ein Grafikfenster zu öffnen, in dem
- * beliebige Grafiken dargestellt werden können.
+ * Damit ist es mï¿½glich ein Grafikfenster zu ï¿½ffnen, in dem
+ * beliebige Grafiken dargestellt werden kï¿½nnen.
  * Dabei wird mit einem Hintergrundspeicher gearbeitet.
- * Das heißt, dass alle Punkte, die mit den Methoden
+ * Das heiï¿½t, dass alle Punkte, die mit den Methoden
  * {@link #drawPix(int, int, java.awt.Color)} und
  * {@link #drawPix(int, int, int, int, int)}
- * gezeichnet werden zunächst in einen Hintergrundspeicher
+ * gezeichnet werden zunï¿½chst in einen Hintergrundspeicher
  * geschrieben werden (sie erscheinen also nicht sofort sichtbar
  * auf dem Bildschirm).
  * Um den Hintergrundspeicher sichtbar zumachen, sollte die
@@ -32,7 +32,7 @@ import java.util.LinkedList;
  * <br/><br/>
  *
  *
- * @author Elmar Böhler
+ * @author Elmar Bï¿½hler
  */
 public class ViewPort {
 
@@ -45,7 +45,7 @@ public class ViewPort {
     private BufferedImage preparationBuffer;
     private BufferedImage background;
     private ViewPortPanel panel;
-    private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();;
+    private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     private String title;
     private LinkedList<FinalizationMethod> finalizer;
     private LinkedList<Character> keyHistory;
@@ -59,7 +59,7 @@ public class ViewPort {
      *
      * @param title Der Titel des erzeugten Fensters.
      * @param width Die Breite des erzeugten Fensters.
-     * @param height Die Höhe des erzeugten Fensters.
+     * @param height Die Hï¿½he des erzeugten Fensters.
      * @param xPos Die x-Position der linken oberen Ecke des Grafikfensters auf dem Bildschirm.
      * @param yPos Die y-Position der linken oberen Ecke des Grafikfensters auf dem Bildschirm.
      */
@@ -77,7 +77,7 @@ public class ViewPort {
         mainWindow.addKeyListener(new MyKeyListener());
 
         mainWindow.setLocation(xPos, yPos);
-        mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainWindow.addWindowListener(new ViewPortalWindowListener());
         JPanel globalPanel = new JPanel();
         globalPanel.setLayout(new BoxLayout(globalPanel, BoxLayout.Y_AXIS));
@@ -98,7 +98,7 @@ public class ViewPort {
      *
      * @param title Der Titel des erzeugten Fensters.
      * @param width Die Breite des erzeugten Fensters.
-     * @param height Die Höhe des erzeugten Fensters.
+     * @param height Die Hï¿½he des erzeugten Fensters.
      */
     public ViewPort(String title, int width, int height) {
         this(title, width, height, (screenSize.width - width) / 2, (screenSize.height -height) /2);
@@ -114,9 +114,9 @@ public class ViewPort {
      * Die Methode bereitet dabei nur den Hintergrund vor,
      * so dass bei einem Aufruf von {@link #clearViewPort()}
      * das gesamte Grafikfenster mit der gegebenen Farbe
-     * befüllt wird.
+     * befï¿½llt wird.
      *
-     * Ein Aufruf dieser Methode befüllt aber das Grafikfenster
+     * Ein Aufruf dieser Methode befï¿½llt aber das Grafikfenster
      * nicht unmittelbar.
      *
      * @param c Die neue Farbe des Hintergrunds.
@@ -127,7 +127,7 @@ public class ViewPort {
 
 
     /**
-     * Gibt die Farbe des Bildpunktes an den gegebenen Koordinaten zurück.
+     * Gibt die Farbe des Bildpunktes an den gegebenen Koordinaten zurï¿½ck.
      *
      * @param x Die x-Koordinate des gefragten Pixels.
      * @param y Die y-Koordinate des gefragten Pixels.
@@ -140,15 +140,15 @@ public class ViewPort {
 
 
     /**
-     * Befüllt den Hintergrundspeicher
-     * mit der durch die Rot-, Grün-, und Blaukomponente
+     * Befï¿½llt den Hintergrundspeicher
+     * mit der durch die Rot-, Grï¿½n-, und Blaukomponente
      * gegebenen Farbe an die gegebenen Koordinaten.
      *
      * @param x Die x-Koordinate des neu im Hintergrund zu setzenden Punktes.
      * @param y Die y-Koordinate des neu im Hintergrund zu setzenden Punktes.
-     * @param red Der Rotwert der Farbe des neuen Punktes. Zulässiger Bereich: 0-255.
-     * @param green Der Grünwert der Farbe des neuen Punktes. Zulässiger Bereich: 0-255.
-     * @param blue Der Blauwert der Farbe des neuen Punktes. Zulässiger Bereich: 0-255.
+     * @param red Der Rotwert der Farbe des neuen Punktes. Zulï¿½ssiger Bereich: 0-255.
+     * @param green Der Grï¿½nwert der Farbe des neuen Punktes. Zulï¿½ssiger Bereich: 0-255.
+     * @param blue Der Blauwert der Farbe des neuen Punktes. Zulï¿½ssiger Bereich: 0-255.
      */
     public void drawPix(int x, int y, int red, int green, int blue) {
         if ((x>=0) && (y>=0) && (x<rawSize.width) && (y<rawSize.height))
@@ -157,12 +157,12 @@ public class ViewPort {
 
 
     /**
-     * Befüllt den Hintergrundspeicher
+     * Befï¿½llt den Hintergrundspeicher
      * mit der gegebenen Farbe an die gegebenen Koordinaten.
      *
      * @param x Die x-Koordinate des neu im Hintergrund zu setzenden Punktes.
      * @param y Die y-Koordinate des neu im Hintergrund zu setzenden Punktes.
-     * @param col Die Farbe des neuen Punktes. Zulässiger Bereich: 0-255.
+     * @param col Die Farbe des neuen Punktes. Zulï¿½ssiger Bereich: 0-255.
      */
     public void drawPix(int x, int y, Color col) {
         if ((x>=0) && (y>=0) && (x<rawSize.width) && (y<rawSize.height))
@@ -291,7 +291,7 @@ public class ViewPort {
 
 
     private interface FinalizationMethod {
-        public void runFinalization();
+        void runFinalization();
     }
 
 

@@ -25,13 +25,12 @@ public class Personen {
     }
 
     public static ArrayList<Person> createTestPersonliste() {
-        ArrayList<Person> personList = new ArrayList<Person>();
 
   /*      PersonList testPersonList = Factory.createTestPersonliste();
         for(schimkat.berlin.lernhilfe2014ws.objectPlay.Person p: testPersonList) {
             personList.add(new Person(p));
         }
 */
-        return personList;
+        return new ArrayList<Person>();
     }
 }

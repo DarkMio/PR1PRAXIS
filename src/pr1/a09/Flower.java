@@ -18,12 +18,10 @@ public class Flower extends PflanzeInit {
         // Let's make a lot of orientation-points:
         int localsize = this.size * 5;
 
-        int outerDiameter = localsize;
         int innerDiameter = localsize - (localsize/6);
 
         // per Petal
         double rotationPerElementDegree = 360.0 / petals;
-        double rotationPerElementRadians = rotationPerElementDegree * Math.PI / 180;
         // two groups of petals make it pretty
         double rotationPerGroupDegree= rotationPerElementDegree/2.0;
         double rotationPerGroupRadians = rotationPerGroupDegree * Math.PI / 180;
