@@ -18,20 +18,20 @@ public class PersonenOld {
         PrintWriter out = new PrintWriter(System.out, true);
 
         ArrayList<Person> testPersonList = createTestPersonliste();
-        HashSet<Person> testPersonen = new HashSet<Person>(testPersonList);
+        HashSet<Person> testPersonen = new HashSet<>(testPersonList);
         printPersons(testPersonen, out);
         printPersons(testPersonen, "06e_testperson.txt");
 
         HashSet<Person> kommilitonen = getPersonsFrom("./data/pr1_kommilitonen.txt");
         HashSet<Person> sportfreunde = getPersonsFrom("./data/pr1_sportfreunde.txt");
 
-        HashSet<Person> KundS = new HashSet<Person>(kommilitonen);
+        HashSet<Person> KundS = new HashSet<>(kommilitonen);
         KundS.retainAll(sportfreunde);
 
-        HashSet<Person> KaberNichtS = new HashSet<Person>(kommilitonen);
+        HashSet<Person> KaberNichtS = new HashSet<>(kommilitonen);
         KaberNichtS.removeAll(sportfreunde);
 
-        HashSet<Person> TvereinigtK = new HashSet<Person>(kommilitonen);
+        HashSet<Person> TvereinigtK = new HashSet<>(kommilitonen);
         TvereinigtK.addAll(sportfreunde);
 
         printPersons(KundS, "06d_KundS.txt");
@@ -60,7 +60,7 @@ public class PersonenOld {
     }
 
     public static HashSet<Person> getPersonsFrom(Scanner dataSource) {
-        HashSet<Person> pSet = new HashSet<Person>();
+        HashSet<Person> pSet = new HashSet<>();
         while(dataSource.hasNext()) {
             pSet.add(createPerson(dataSource));
         }
@@ -80,6 +80,6 @@ public class PersonenOld {
             personList.add(new Person(p));
         }
 */
-        return new ArrayList<Person>();
+        return new ArrayList<>();
     }
 }
