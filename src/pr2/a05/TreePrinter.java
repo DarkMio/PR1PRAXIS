@@ -17,7 +17,7 @@ public class TreePrinter {
         PrintWriter out = new PrintWriter(System.out, true);
         printTree(tree.postorderIterator(), out);
         out.println("------------");
-        printTree(tree.preorderIterator(), out);
+        printTree(tree.preorderIterator(), out, 3, false);
         out.println("------------");
         printTree(tree.depthFirstIterator(), out);
     }
@@ -32,18 +32,17 @@ public class TreePrinter {
         if (width <= 0) {
             return;
         }
-        StringWriter str = new StringWriter();
         while (iterator.hasNext()) {
             TreeNode node = iterator.next();
+            out.print(node + " ");
             if (skipLeafs && node.isLeaf()) {
                 continue;
             }
-            Enumeration<TreeNode> enums = node.children();
-            while (enums.hasMoreElements()) {
-                TreeNode nod = enums.nextElement();
-
+            Enumeration enums = node.children();
+            if (enums.hasMoreElements()) {
+                System.out.println("! " + enums.nextElement());
             }
+            return;
         }
     }
-
 }

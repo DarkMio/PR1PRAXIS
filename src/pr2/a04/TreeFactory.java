@@ -25,17 +25,18 @@ public class TreeFactory {
         return createTree(lines);
     }
 
-    public static String[] readLines(String path) {
+    private static String[] readLines(String path) {
         try {
             return readLines(new Scanner(new File(path)));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.exit(-1);
+            // This statement can never be reached. Thanks Java compiler.
+            return new String[]{};
         }
-        return null;
     }
 
-    public static boolean treeHasNode(QadTree tree, String s) {
+    private static boolean treeHasNode(QadTree tree, String s) {
         Iterator<TreeNode> it = tree.preorderIterator();
         while (it.hasNext()) {
             if (s.equals(it.next().toString())) {
@@ -45,8 +46,8 @@ public class TreeFactory {
         return false;
     }
 
-    public static String[] readLines(Scanner in) {
-        ArrayList<String> list = new ArrayList<String>();
+    private static String[] readLines(Scanner in) {
+        ArrayList<String> list = new ArrayList<>();
 
         while (in.hasNextLine()) {
             String s = in.nextLine();
@@ -58,8 +59,8 @@ public class TreeFactory {
         return fromListToArray(list);
     }
 
-    public static String[] readLine(Scanner in) {
-        ArrayList<String> list = new ArrayList<String>();
+    private static String[] readLine(Scanner in) {
+        ArrayList<String> list = new ArrayList<>();
 
         while (in.hasNext()) {
             list.add(in.next());
@@ -67,22 +68,12 @@ public class TreeFactory {
         return fromListToArray(list);
     }
 
-    public static String[] fromListToArray(ArrayList<String> list) {
+    private static String[] fromListToArray(ArrayList<String> list) {
         String[] array = new String[list.size()];
         for (int i = 0; i < list.size(); i++) {
             array[i] = list.get(i);
         }
         return array;
-    }
-
-    public static String[] cutArray(String[] a) {
-        if(a.length > 1) {
-            String[] cut = new String[a.length - 1];
-            System.arraycopy(a, 1, cut, 0, a.length - 1);
-            return cut;
-        } else {
-            return a;
-        }
     }
 
     public static QadTree createTree(String[] lines) {
@@ -91,9 +82,8 @@ public class TreeFactory {
 
         for(int i = 1; i < lines.length; i++) {
             Scanner in = new Scanner(lines[i]);
+            String head = in.next();
             String[] array = readLine(in);
-            String head = array[0];
-            array = cutArray(array);
 
             if (treeHasNode(tree, head)){
                 tree.addChilds(head, array);

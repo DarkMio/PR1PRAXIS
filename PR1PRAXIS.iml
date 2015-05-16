@@ -8,7 +8,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="schimkat-lernhilfe2014ws-io" level="project" />
     <orderEntry type="library" exported="" name="junit-4.11" level="project" />
     <orderEntry type="module-library" exported="">
       <library>
@@ -29,5 +28,8 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="lernhilfe2015ss-tree-01" level="project" />
+    <orderEntry type="library" name="schimkat-lernhilfe2014ws-graphics" level="project" />
+    <orderEntry type="library" name="schimkat-lernhilfe2014ws-io" level="project" />
+    <orderEntry type="library" name="schimkat-lernhilfe2014ws-oo" level="project" />
   </component>
 </module>
