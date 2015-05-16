@@ -6,8 +6,9 @@ import java.awt.*;
 
 public class CoordinateSystem implements Drawable {
 
-    private int[] a;
-    private int height, width;
+    private final int[] a;
+    private final int height;
+    private final int width;
 
     public CoordinateSystem(int[] a, int height, int width) {
         this.a = a;
@@ -17,8 +18,6 @@ public class CoordinateSystem implements Drawable {
 
     @Override
     public void draw(Graphics g) {
-        int first = a[0];
-        int last = a[a.length-1];
         int midX = width/2;
         int midY = height/2;
         double incrementWidth = midX/25;

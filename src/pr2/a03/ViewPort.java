@@ -34,21 +34,20 @@ import java.util.LinkedList;
  *
  * @author Elmar B�hler
  */
+@SuppressWarnings("ALL")
 public class ViewPort {
 
 
     /* ----------------------------- Attribute ---------------------------- */
 
-    private JFrame mainWindow;
-    private Dimension rawSize;
-    private BufferedImage viewPort;
-    private BufferedImage preparationBuffer;
-    private BufferedImage background;
-    private ViewPortPanel panel;
-    private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private String title;
-    private LinkedList<FinalizationMethod> finalizer;
-    private LinkedList<Character> keyHistory;
+    private final JFrame mainWindow;
+    private final Dimension rawSize;
+    private final BufferedImage viewPort;
+    private final BufferedImage preparationBuffer;
+    private final BufferedImage background;
+    private static final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    private final LinkedList<FinalizationMethod> finalizer;
+    private final LinkedList<Character> keyHistory;
 
 
 
@@ -64,15 +63,15 @@ public class ViewPort {
      * @param yPos Die y-Position der linken oberen Ecke des Grafikfensters auf dem Bildschirm.
      */
     public ViewPort(String title, int width, int height, int xPos, int yPos) {
-        this.title = title;
+        String title1 = title;
         rawSize = new Dimension(width, height);
 
         viewPort = new BufferedImage(rawSize.width, rawSize.height, BufferedImage.TYPE_3BYTE_BGR);
         preparationBuffer = new BufferedImage(rawSize.width, rawSize.height, BufferedImage.TYPE_3BYTE_BGR);
         background = new BufferedImage(rawSize.width, rawSize.height, BufferedImage.TYPE_3BYTE_BGR);
-        panel = new ViewPortPanel(rawSize.width, rawSize.height);
+        ViewPortPanel panel = new ViewPortPanel(rawSize.width, rawSize.height);
 
-        mainWindow = new JFrame(this.title);
+        mainWindow = new JFrame(title1);
         keyHistory = new LinkedList<>();
         mainWindow.addKeyListener(new MyKeyListener());
 
@@ -87,7 +86,7 @@ public class ViewPort {
 
         setBackgroundColor(new Color(255,255,255));
         clearViewPort();
-        finalizer = new LinkedList<FinalizationMethod>();
+        finalizer = new LinkedList<>();
     }
 
 
@@ -250,7 +249,7 @@ public class ViewPort {
         }
         @Override
         public void windowClosing(WindowEvent arg0) {
-            for (FinalizationMethod fm : finalizer) fm.runFinalization();
+            finalizer.forEach(ViewPort.FinalizationMethod::runFinalization);
         }
         @Override
         public void windowDeactivated(WindowEvent arg0) {

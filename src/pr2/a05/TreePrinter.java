@@ -9,6 +9,7 @@ import java.io.*;
 import java.util.Enumeration;
 import java.util.Iterator;
 
+@SuppressWarnings("ALL")
 public class TreePrinter {
 
     public static void main(String[] args){

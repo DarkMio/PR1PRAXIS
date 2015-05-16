@@ -4,10 +4,13 @@ import schimkat.berlin.lernhilfe2014ws.graphics.Drawable;
 
 import java.awt.*;
 
+@SuppressWarnings("ALL")
 public class Text implements Drawable {
 
-    private String s;
-    private int x, y, size;
+    private final String s;
+    private final int x;
+    private final int y;
+    private final int size;
 
     public Text(String s, int x, int y) {
         this(s, x, y, 10);

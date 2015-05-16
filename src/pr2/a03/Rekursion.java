@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+@SuppressWarnings("ALL")
 public class Rekursion {
 
     public static void main(String[] args) {
@@ -18,7 +19,7 @@ public class Rekursion {
     }
 
     public static int[] createArray(Scanner in) {
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
 
         while (in.hasNextInt()){
             list.add(in.nextInt());

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
+@SuppressWarnings("ALL")
 public class RekursionDP {
 
     public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class RekursionDP {
     }
 
     public static int[] createArray(Scanner in) {
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
 
         while (in.hasNextInt()){
             list.add(in.nextInt());

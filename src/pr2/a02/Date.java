@@ -5,7 +5,6 @@ public class Date {
     protected int day, month, year;
 
     public Date (int day, int month, int year) throws IllegalDateException {
-        boolean even = (month % 2) == 0;
         int[] monthDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
         // Valid months: 1 - 12
