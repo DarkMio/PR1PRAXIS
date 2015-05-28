@@ -3,13 +3,12 @@ package pr2.a05;
 
 import pr2.a04.TreeFactory;
 import schimkat.berlin.lernhilfe2015ss.tree.QadTree;
-
 import javax.swing.tree.TreeNode;
 import java.io.*;
 import java.util.Enumeration;
 import java.util.Iterator;
 
-@SuppressWarnings("ALL")
+
 public class TreePrinter {
 
     public static void main(String[] args){
