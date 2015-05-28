@@ -50,8 +50,8 @@ public class TreePrinter {
             return (QadTree) ois.readObject();
         } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
+            System.exit(-1);
         }
-        System.exit(-1);
         return new QadTree("");
     }
 
