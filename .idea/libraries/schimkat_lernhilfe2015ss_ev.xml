@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="schimkat-lernhilfe2015ss-ev">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/schimkat-lernhilfe2015ss-ev.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

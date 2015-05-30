@@ -32,5 +32,6 @@
     <orderEntry type="library" exported="" name="schimkat-lernhilfe2014ws-io" level="project" />
     <orderEntry type="library" exported="" name="schimkat-lernhilfe2014ws-oo" level="project" />
     <orderEntry type="library" name="junit" level="project" />
+    <orderEntry type="library" name="schimkat-lernhilfe2015ss-ev" level="project" />
   </component>
 </module>
