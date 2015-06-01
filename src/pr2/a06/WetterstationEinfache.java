@@ -22,6 +22,6 @@ public class WetterstationEinfache implements EventHandler<ActionWACEvent> {
     }
 
     public void handle(ActionWACEvent ae) {
-        controller.handle(ae);
+       controller.handle(ae);
     }
 }

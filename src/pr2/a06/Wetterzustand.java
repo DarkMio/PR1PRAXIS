@@ -9,4 +9,8 @@ public class Wetterzustand {
     public final String rainy      = "REGEN";
     public final String thunder    = "GEWITTER";
 
+    public String[] returnWeatherStates() {
+        return new String[]{sunny, covered, cloudy, rainy, thunder};
+    }
+
 }

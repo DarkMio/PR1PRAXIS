@@ -9,14 +9,13 @@ public class WetterSimulationZweite {
     public static void main(String[] args) {
 
         Wetterzustand wz = new Wetterzustand();
-        WeatherSensor ws_cloudy = new WeatherSensor(wz.cloudy, random());
-        WeatherSensor ws_covered = new WeatherSensor(wz.covered, random());
-        WeatherSensor ws_rainy = new WeatherSensor(wz.rainy, random());
-        WeatherSensor ws_sunny = new WeatherSensor(wz.sunny, random());
-        WeatherSensor ws_thunder = new WeatherSensor(wz.thunder, random());
 
         WeatherSensor[] array = new WeatherSensor[]{
-                ws_cloudy, ws_covered, ws_rainy, ws_sunny, ws_thunder
+                new WeatherSensor(wz.cloudy, random()),
+                new WeatherSensor(wz.covered, random()),
+                new WeatherSensor(wz.rainy, random()),
+                new WeatherSensor(wz.sunny, random()),
+                new WeatherSensor(wz.thunder, random())
         };
 
         EventHandler<ActionWACEvent> ae = new WetterPrinter();
