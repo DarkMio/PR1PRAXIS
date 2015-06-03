@@ -21,6 +21,7 @@ public class Controller {
             if (s.equals(ae.getActionCommand())) {
                 wsm.changeWeather(ae.getActionCommand());
                 dp.showDrawing();
+                return;
             }
         }
     }
