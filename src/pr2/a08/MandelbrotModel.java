@@ -9,6 +9,16 @@ public class MandelbrotModel {
     int height, width, iterations;
     double unit, zoom, x, y;
 
+    public MandelbrotModel(double x, double y, int height, int width, int iterations) {
+        this.height = height;
+        this.width = width;
+        this.iterations = iterations;
+        this.x = x;
+        this.y = y;
+        this.unit = 0.007;
+        pcs = new PropertyChangeSupport(this);
+    }
+
     public void setHeight(int height) {
         this.height = height;
     }
@@ -38,7 +48,6 @@ public class MandelbrotModel {
     }
 
     public int getWidth() {
-
         return width;
     }
 
@@ -63,18 +72,7 @@ public class MandelbrotModel {
     }
 
     public int getHeight() {
-
         return height;
-    }
-
-    public MandelbrotModel(double x, double y, int height, int width, int iterations) {
-        this.height = height;
-        this.width = width;
-        this.iterations = iterations;
-        this.x = x;
-        this.y = y;
-        this.unit = 0.007;
-        pcs = new PropertyChangeSupport(this);
     }
 
     public void zoomEvent(double x, double y){

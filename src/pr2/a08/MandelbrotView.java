@@ -19,6 +19,12 @@ public class MandelbrotView extends JPanel implements Drawable, PropertyChangeLi
     public MandelbrotView(MandelbrotModel mm) {
         dp = new DirtyPainter();
         dp.add(this);
+        modelSetup(mm);
+        dp.showDrawing();
+        // init von model in main, dann pointer nur übergeben
+    }
+
+    private void modelSetup(MandelbrotModel mm) {
         this.mm = mm;
         height = mm.getHeight();
         width = mm.getWidth();
@@ -28,23 +34,6 @@ public class MandelbrotView extends JPanel implements Drawable, PropertyChangeLi
         x = mm.getX();
         y = mm.getY();
         mm.addPropertyChangeListener(this);
-        dp.showDrawing();
-        // init von model in main, dann pointer nur übergeben
-    }
-
-    public void zoom(double xPos, double yPos) {
-        if (yPos < mm.getWidth()) {
-            double unit_old = mm.getUnit();
-
-            if (mm.getIterations() == 3880760) return; // Maximum
-            mm.setUnit(unit_old * 0.5);
-            mm.setIterations((int) (mm.getIterations()*1.3));
-            mm.setZoom(mm.getZoom()*2);
-
-
-            mm.setX(mm.getX()-(200-xPos)*mm.getUnit() + (unit_old - mm.getUnit()) * xPos);
-            mm.setY(mm.getY()-(185-yPos)*mm.getUnit() + (unit_old - mm.getUnit()) * yPos);
-        }
     }
 
     @Override
@@ -68,6 +57,7 @@ public class MandelbrotView extends JPanel implements Drawable, PropertyChangeLi
         }
         System.out.println("Done! Iterations: " + iterations);
     }
+
     public int checkC(double reC,double imC) {
         double reZ=0, imZ=0, reZ_minus1=0, imZ_minus1=0;
         int i;
