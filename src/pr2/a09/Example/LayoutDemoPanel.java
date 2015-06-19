@@ -1,4 +1,4 @@
-package pr2.a09;
+package pr2.a09.Example;
 
 import javax.swing.*;
 import java.awt.*;

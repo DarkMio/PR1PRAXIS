@@ -1,4 +1,6 @@
-package pr2.a09;
+package pr2.a09.Example;
+
+import pr2.a09.Example.LayoutDemoPanel;
 
 import javax.swing.*;
 import java.awt.*;
