@@ -30,8 +30,8 @@ public class Mandelbrot implements Drawable{
             zoom *= 2;
 
 
-            x = x-(200-xPos)*unit + (unit_old - unit) * xPos;
-            y = y-(185-yPos)*unit + (unit_old - unit) * yPos;
+            x = x-(width/2-xPos)*unit + (unit_old - unit) * xPos;
+            y = y-(height/2-yPos)*unit + (unit_old - unit) * yPos;
         }
     }
 
@@ -47,7 +47,7 @@ public class Mandelbrot implements Drawable{
                 if (complex == iterations) {
                     g.setColor(new Color(0, 0, 0));
                 } else {
-                     g.setColor(new Color((15*complex)%255, (10*complex)%255, 125+complex%125));
+                     g.setColor(new Color((complex)%255, (10*complex)%255, complex%255));
                 }
                 g.drawRect((int) (col+this.x), (int) (row+this.y), 1, 1);
                 rec += unit;
