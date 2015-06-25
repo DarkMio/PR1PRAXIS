@@ -16,7 +16,7 @@ public class SmileyTest {
         dp.showDrawing();
         for(int i = 0; i < 100; i++) {
             mb.zoom(200.396307, 299.1376010225);
-            dp.showDrawingAfterWaiting(1000);
+            dp.showDrawingAfterWaiting(100);
             System.out.println("Tried to zoom");
        }
     }
