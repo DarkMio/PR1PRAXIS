@@ -1,5 +1,7 @@
 package pr2.a10;
 
+import pr2.a10.BorderLayoutPanel.BorderLayoutPanel;
+
 import javax.swing.*;
 import java.awt.*;
 

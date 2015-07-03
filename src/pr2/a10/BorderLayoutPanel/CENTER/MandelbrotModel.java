@@ -1,10 +1,12 @@
-package pr2.a09;
+package pr2.a10.BorderLayoutPanel.CENTER;
 
-import java.awt.event.MouseListener;
+import pr2.a10.Commands;
+
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 public class MandelbrotModel {
+
 
     protected PropertyChangeSupport pcs;
     int height, width, iterations, rMultiplier, gMultiplier, bMultiplier;
@@ -43,9 +45,9 @@ public class MandelbrotModel {
         this.y = y;
         this.unit = 0.007;
         pcs = new PropertyChangeSupport(this);
-        this.rMultiplier = 15;
-        this.gMultiplier = 20;
-        this.bMultiplier = 125;
+        this.rMultiplier = 1773;
+        this.gMultiplier = 1784;
+        this.bMultiplier = 1784;
 
     }
 
@@ -108,11 +110,18 @@ public class MandelbrotModel {
     public void zoomEvent(double x, double y){
         zoom(x, y);
         if (this.x != x) {
-            pcs.firePropertyChange("MODEL_UPDATE", this.x, x);
+            pcs.firePropertyChange(Commands.ZOOM, this.x, x);
         }
         if (this.y != y) {
-            pcs.firePropertyChange("MODEL_UPDATE", this.y, y);
+            pcs.firePropertyChange(Commands.ZOOM, this.y, y);
         }
+    }
+
+    public void colorMultiplierEvent(int r, int g, int b) {
+        rMultiplier = r;
+        gMultiplier = g;
+        bMultiplier = b;
+        pcs.firePropertyChange(Commands.COLOR_MULTIPLIER, 0, r);
     }
 
     public void zoom(double xPos, double yPos) {
@@ -130,6 +139,13 @@ public class MandelbrotModel {
         }
     }
 
+    public void resizeEvent(int width, int height) {
+        boolean change = width != this.width || height != this.height;
+        this.width = width;
+        this.height = height;
+        pcs.firePropertyChange(Commands.RESIZE, false, change);
+    }
+
     public void addPropertyChangeListener(PropertyChangeListener l) {
         pcs.addPropertyChangeListener(l);
     }
@@ -137,5 +153,4 @@ public class MandelbrotModel {
     public void removePropertyChangeListener(PropertyChangeListener l) {
         pcs.removePropertyChangeListener(l);
     }
-
 }
