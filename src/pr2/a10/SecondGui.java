@@ -8,7 +8,7 @@ import java.awt.*;
 public class SecondGui {
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Testpanel");
+        JFrame frame = new JFrame("Mandelbrot Super Panel");
         Container container = frame.getContentPane();
 
         container.setLayout(new BorderLayout());
