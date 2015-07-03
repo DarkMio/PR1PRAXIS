@@ -17,6 +17,7 @@ public class FirstMandelbrotPanel extends JPanel implements PropertyChangeListen
 
     public FirstMandelbrotPanel(MandelbrotModel mm) {
         modelSetup(mm);
+        setSize(300, 500);
         // init von model in main, dann pointer nur übergeben
     }
 

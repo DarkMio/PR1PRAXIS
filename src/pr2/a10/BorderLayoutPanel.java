@@ -20,7 +20,7 @@ public class BorderLayoutPanel  extends JPanel {
         add(new TLPanel("SOUTH", "S O U T H"), BorderLayout.SOUTH);
         add(new TLPanel("NORTH", "N O R T H"), BorderLayout.NORTH);
         add(new TLPanel("WEST", "W E S T"), BorderLayout.WEST);
-        add(new TLPanel("EAST", "E A S T"), BorderLayout.EAST);
+        add(new ZoomButton());
         mp.repaint();
 
     }

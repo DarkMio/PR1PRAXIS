@@ -26,5 +26,15 @@ public class FirstGui {
         AAPCEventPrinter ap = new AAPCEventPrinter();
         Timer t = new Timer(1000, ap);
         t.start();
+        while(true) {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            mm.zoomEvent(200.396307, 299.1376010225);
+
+        }
     }
 }
