@@ -3,6 +3,9 @@ package pr2.a10;
 import pr2.a10.BorderLayoutPanel.CENTER.MandelbrotModel;
 import pr2.a10.BorderLayoutPanel.ButtonPanel.ButtonPanel;
 
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -12,7 +15,8 @@ public class Controller implements ActionListener, MouseListener, ComponentListe
     MandelbrotModel mm;
     ButtonPanel bp;
 
-    public Controller() {}
+    public Controller() {
+    }
 
     public void setMm(MandelbrotModel mm) {
         this.mm = mm;
@@ -24,11 +28,15 @@ public class Controller implements ActionListener, MouseListener, ComponentListe
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getActionCommand().equals(Commands.COLOR_MULTIPLIER)) {
+        if (e.getActionCommand().equals(Commands.COLOR_MULTIPLIER)) {
             int r = bp.getRMultiplier();
             int g = bp.getGMultiplier();
             int b = bp.getBMultiplier();
             mm.colorMultiplierEvent(r, g, b);
+        }
+        if (e.getActionCommand().equals(Commands.RESET)) {
+            mm = new MandelbrotModel();
+
         }
     }
 

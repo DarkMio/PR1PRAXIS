@@ -9,19 +9,22 @@ import java.awt.*;
 public class ButtonPanel extends JPanel {
 
     protected JLabel label;
-    protected JTextField rMultiplier;
-    protected JTextField gMultiplier;
-    protected JTextField bMultiplier;
+    protected JSpinner rMultiplier;
+    protected JSpinner gMultiplier;
+    protected JSpinner bMultiplier;
+    protected JButton reset;
     protected JButton zoom;
 
     public ButtonPanel(Controller cont) {
         label = new JLabel("Some size");
-        rMultiplier = spawnTextField(cont, 4, Commands.COLOR_MULTIPLIER, "1773");
-        gMultiplier = spawnTextField(cont, 4, Commands.COLOR_MULTIPLIER, "1784");
-        bMultiplier = spawnTextField(cont, 4, Commands.COLOR_MULTIPLIER, "1784");
+        reset = new JButton("Reset zoom");
+        rMultiplier = spawnSpinner(0, 254, 253);
+        gMultiplier = spawnSpinner(0, 254, 254);
+        bMultiplier = spawnSpinner(0, 254, 254);
         zoom = new JButton("Set RGB Multiplier");
-
+        reset.setActionCommand(Commands.RESET);
         zoom.setActionCommand(Commands.COLOR_MULTIPLIER);
+
 
         Timer xPointing = new Timer(0, cont);
         xPointing.setActionCommand(Commands.COLOR_MULTIPLIER);
@@ -48,16 +51,21 @@ public class ButtonPanel extends JPanel {
         return tf;
     }
 
+    private static JSpinner spawnSpinner(int min, int max, int def) {
+        SpinnerNumberModel mdl = new SpinnerNumberModel(def, min, max, 1);
+        return new JSpinner(mdl);
+    }
+
     public int getRMultiplier() {
-        return Integer.parseInt(rMultiplier.getText());
+        return (int) rMultiplier.getValue();
     }
 
     public int getGMultiplier() {
-        return Integer.parseInt(gMultiplier.getText());
+        return (int) gMultiplier.getValue();
     }
 
     public int getBMultiplier() {
-        return Integer.parseInt(bMultiplier.getText());
+        return (int) bMultiplier.getValue();
     }
 
 }

@@ -45,9 +45,9 @@ public class MandelbrotModel {
         this.y = y;
         this.unit = 0.007;
         pcs = new PropertyChangeSupport(this);
-        this.rMultiplier = 1773;
-        this.gMultiplier = 1784;
-        this.bMultiplier = 1784;
+        this.rMultiplier = 253;
+        this.gMultiplier = 254;
+        this.bMultiplier = 254;
 
     }
 
