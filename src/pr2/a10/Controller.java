@@ -35,8 +35,7 @@ public class Controller implements ActionListener, MouseListener, ComponentListe
             mm.colorMultiplierEvent(r, g, b);
         }
         if (e.getActionCommand().equals(Commands.RESET)) {
-            mm = new MandelbrotModel();
-
+            mm.resetEvent();
         }
     }
 

@@ -146,6 +146,14 @@ public class MandelbrotModel {
         pcs.firePropertyChange(Commands.RESIZE, false, change);
     }
 
+    public void resetEvent() {
+        unit = 0.007;
+        iterations = 100;
+        x = -2.0;
+        y = -1.3;
+        pcs.firePropertyChange(Commands.RESET, false, true);
+    }
+
     public void addPropertyChangeListener(PropertyChangeListener l) {
         pcs.addPropertyChangeListener(l);
     }

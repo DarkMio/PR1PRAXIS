@@ -34,6 +34,7 @@ public class MandelbrotPanel extends JPanel implements PropertyChangeListener {
         rMultiplier = mm.getrMultiplier();
         gMultiplier = mm.getgMultiplier();
         bMultiplier = mm.getbMultiplier();
+        repaint();
     }
 
     @Override
@@ -105,6 +106,8 @@ public class MandelbrotPanel extends JPanel implements PropertyChangeListener {
                 onRecoloring();
             case Commands.RESIZE:
                 onResize();
+            case Commands.RESET:
+                modelSetup(mm);
         }
     }
 }

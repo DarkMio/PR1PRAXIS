@@ -25,19 +25,11 @@ public class ButtonPanel extends JPanel {
         reset.setActionCommand(Commands.RESET);
         zoom.setActionCommand(Commands.COLOR_MULTIPLIER);
 
-
-        Timer xPointing = new Timer(0, cont);
-        xPointing.setActionCommand(Commands.COLOR_MULTIPLIER);
-        xPointing.setDelay(1000);
-
-        Timer yPointing = new Timer(0, cont);
-        yPointing.setActionCommand(Commands.COLOR_MULTIPLIER);
-        yPointing.setDelay(1000);
-
-
+        reset.addActionListener(cont);
         zoom.addActionListener(cont);
 
         setLayout(new FlowLayout());
+        add(reset);
         add(rMultiplier);
         add(gMultiplier);
         add(bMultiplier);
